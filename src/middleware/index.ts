@@ -1,10 +1,10 @@
 // check if middleware works with blocking incorrect token
 // https://www.youtube.com/watch?v=Jfkme6WE_Dk&ab_channel=DailyWebCoding
 
-const admin = require('../backend/config/firebase');
+import admin from '../backend/firebase-auth/firebase-config.ts'
 
 class Middleware{
-    async decodeToken(req, res, next){
+    async decodeToken(req:any, res:any, next:any){
         
         try{
             const token = req.headers.authorization.split(' ')[1];
@@ -26,4 +26,4 @@ class Middleware{
     }
 }
 
-module.exports = new Middleware();
+export default Middleware;

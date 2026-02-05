@@ -13,6 +13,9 @@ dist-ssr
 *.local
 .env.local
 
+/backend/firebase-auth/*.json
+/backend/gcloud/*.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
