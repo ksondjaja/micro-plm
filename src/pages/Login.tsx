@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export function Login() {
+export function Login(props: any) {
   return (
     <div className="flex justify-center">
       <Card className="w-full max-w-sm">
@@ -26,7 +26,10 @@ export function Login() {
                 <Input
                   id="email"
                   type="email"
+                  name="email"
                   placeholder="m@example.com"
+                  value={props.user.email}
+                  onChange={props.handleUserChange}
                   required
                 />
               </div>
@@ -40,13 +43,19 @@ export function Login() {
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  value={props.user.password}
+                  onChange={props.handleUserChange}
+                  required />
               </div>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full" onClick={props.onSubmitLogIn}>
             Login
           </Button>
           <p>-OR-</p>

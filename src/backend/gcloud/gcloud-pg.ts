@@ -13,7 +13,7 @@ const clientOpts = await connector.getOptions({
 
 const pool = new Pool({
   ...clientOpts,
-  user: gcloudKeys.user,
+  user: gcloudKeys.IAMUser,
   password: gcloudKeys.password,
   database: gcloudKeys.database,
   max: 5,

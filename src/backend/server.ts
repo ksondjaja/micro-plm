@@ -4,7 +4,7 @@ import router from './apis/plm.ts';
 import Middleware from '../middleware/index.ts';
 
 const app = express();
-const port = 8000;
+const port = 8888;
 
 app.use(cors());
 
